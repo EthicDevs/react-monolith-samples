@@ -1,5 +1,5 @@
 {
-  "_generatedAtUnix": 1657246241971,
+  "_generatedAtUnix": 1657247146550,
   "_hashAlgorithm": "sha1",
   "_version": 2,
   "islands": {
@@ -18,16 +18,12 @@
   },
   "views": {
     "InternalErrorView": {
-      "hash": "28c1125ea1b64083eae10b6a91b7426eb10fc55b",
-      "pathSource": ".InternalErrorView"
+      "hash": "4fa1c849fe661798ce887fc7144654910e2afccf",
+      "pathSource": "./app/views/InternalErrorView.tsx"
     },
     "NotFoundErrorView": {
       "hash": "b51c9ca04e0198414997e72a763afc975077b07c",
       "pathSource": ".NotFoundErrorView"
-    },
-    "CustomInternalErrorView": {
-      "hash": "98ed7065e54492b9fa7193045c2b1c59eead039c",
-      "pathSource": "./app/views/CustomInternalErrorView.tsx"
     },
     "HomeView": {
       "hash": "15b4c90929e708c203a1233af839e28eb245e87d",
