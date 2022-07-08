@@ -11,8 +11,8 @@
     "test": "NODE_ENV=test jest"
   },
   "dependencies": {
-    "@ethicdevs/fastify-stream-react-views": "^0.8.1",
-    "@ethicdevs/react-monolith": "^0.2.2",
+    "@ethicdevs/fastify-stream-react-views": "^0.9.0",
+    "@ethicdevs/react-monolith": "^0.2.4",
     "cross-fetch": "^3.1.5",
     "fastify-static": "^4.6.1",
     "react": "^17.0.2",

@@ -1,35 +1,37 @@
 {
-  "_generatedAtUnix": 1657058487982,
+  "_generatedAtUnix": 1657246241971,
   "_hashAlgorithm": "sha1",
-  "_version": 1,
+  "_version": 2,
   "islands": {
     "Counter": {
       "hash": "44e7ea4584ac6f8343d6c6fef8f0fd898ff9dd9f",
-      "id": "Counter",
       "pathSource": "./app/islands/Counter.tsx",
       "pathBundle": "./public/.islands/Counter.bundle.js",
-      "type": "ReactIsland"
+      "pathSourceMap": "./public/.islands/Counter.bundle.js.map"
     },
     "GitHubUserTag": {
       "hash": "1f3c64f71832a8f7ab02e067c379c2fc51a2c91d",
-      "id": "GitHubUserTag",
       "pathSource": "./app/islands/GitHubUserTag.tsx",
       "pathBundle": "./public/.islands/GitHubUserTag.bundle.js",
-      "type": "ReactIsland"
+      "pathSourceMap": "./public/.islands/GitHubUserTag.bundle.js.map"
     }
   },
   "views": {
+    "InternalErrorView": {
+      "hash": "28c1125ea1b64083eae10b6a91b7426eb10fc55b",
+      "pathSource": ".InternalErrorView"
+    },
+    "NotFoundErrorView": {
+      "hash": "b51c9ca04e0198414997e72a763afc975077b07c",
+      "pathSource": ".NotFoundErrorView"
+    },
+    "CustomInternalErrorView": {
+      "hash": "98ed7065e54492b9fa7193045c2b1c59eead039c",
+      "pathSource": "./app/views/CustomInternalErrorView.tsx"
+    },
     "HomeView": {
       "hash": "15b4c90929e708c203a1233af839e28eb245e87d",
-      "id": "HomeView",
-      "pathSource": "./app/views/HomeView.tsx",
-      "type": "ReactView"
-    },
-    "internal-error": {
-      "hash": "439b73f76c4d19461afefb19b6d845172586b8df",
-      "id": "internal-error",
-      "pathSource": "./app/views/internal-error.tsx",
-      "type": "ReactView"
+      "pathSource": "./app/views/HomeView.tsx"
     }
   }
 }

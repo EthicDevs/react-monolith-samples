@@ -2,11 +2,13 @@ import React from "react";
 import type { ReactView } from "@ethicdevs/react-monolith";
 import type { FastifyError } from "fastify";
 
-export type InternalErrorViewProps = {
+export type CustomInternalErrorViewProps = {
   error: FastifyError;
 };
 
-const InternalErrorView: ReactView<InternalErrorViewProps> = ({ error }) => {
+const CustomInternalErrorView: ReactView<CustomInternalErrorViewProps> = ({
+  error,
+}) => {
   return (
     <div>
       <h1>😵‍💫 Woops... we've encountered an internal error.</h1>
@@ -34,4 +36,4 @@ const InternalErrorView: ReactView<InternalErrorViewProps> = ({ error }) => {
   );
 };
 
-export default InternalErrorView;
+export default CustomInternalErrorView;

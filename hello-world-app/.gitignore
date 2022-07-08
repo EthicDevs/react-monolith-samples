@@ -4,3 +4,6 @@ node_modules/
 
 package-lock.json
 *.log
+
+# Ignore islands built files
+public/.islands/
