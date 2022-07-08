@@ -1,23 +1,25 @@
 // 3rd-party
 import serveStatic from "fastify-static";
 import {
+  AppServer,
   makeAppServer,
   startAppServer,
   stopAppServerAndExit,
 } from "@ethicdevs/react-monolith";
 
 // app
-import * as paths from "./paths";
-import { getEnv } from "./app/utils/server";
-import { version as appVersion } from "./package.json";
+import { version as appVersion } from "../package.json";
+import * as paths from "../paths";
+import { getEnv } from "./utils/server";
+
+const HOST = process.env.HOST || "localhost";
+const PORT = process.env.PORT || 4100;
+const __DEV__ = process.env.NODE_ENV !== "production";
+
+let server: null | AppServer = null;
 
 async function main() {
-  const HOST = process.env.HOST || "localhost";
-  const PORT = process.env.PORT || 4100;
-
-  const __DEV__ = process.env.NODE_ENV !== "production";
-
-  const server = await makeAppServer(HOST, PORT, {
+  server = await makeAppServer(HOST, PORT, {
     appName: "hello-world-app",
     appVersion,
     env: getEnv(),
@@ -35,18 +37,6 @@ async function main() {
     },
   });
 
-  ["unhandledRejection", "uncaughtException"].forEach((exception) => {
-    process.on(exception, async (reason: Error) => {
-      await stopAppServerAndExit(server, reason);
-    });
-  });
-
-  ["SIGQUIT", "SIGTERM", "SIGINT"].forEach((killSignal) => {
-    process.on(killSignal, async () => {
-      await stopAppServerAndExit(server);
-    });
-  });
-
   server.register(serveStatic, {
     root: paths.PUBLIC_FOLDER,
     prefix: "/public",
@@ -56,6 +46,19 @@ async function main() {
   return server;
 }
 
+// Catch errors that are fatal
+["unhandledRejection", "uncaughtException"].forEach((exception) => {
+  process.on(exception, async (reason: Error) => {
+    await stopAppServerAndExit(server, reason);
+  });
+});
+// Catch standard linux signals to kill a daemon
+["SIGQUIT", "SIGTERM", "SIGINT"].forEach((killSignal) => {
+  process.on(killSignal, async () => {
+    await stopAppServerAndExit(server);
+  });
+});
+// Start the application server
 main()
   .then((server) => {
     // safe because it wont start if null

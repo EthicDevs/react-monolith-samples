@@ -57,7 +57,6 @@ const styles: Record<string, CSSProperties> = {
     fontFamily: "monospace",
     marginTop: 12,
     padding: 8,
-    paddingRight: 0,
     height: 24,
     minHeight: 24,
     maxHeight: 24,

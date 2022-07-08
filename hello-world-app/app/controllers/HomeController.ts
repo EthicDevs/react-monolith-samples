@@ -2,6 +2,8 @@
 import { ReqHandler } from "@ethicdevs/react-monolith";
 
 // app
+import HomeView from "../views/HomeView";
+
 import type { GHUserData } from "../services/fetchUserData";
 import { fetchUserData } from "../services/fetchUserData";
 
@@ -14,17 +16,18 @@ const getGitHubUser = async (username: string): Promise<GHUserData | null> => {
 };
 
 export const getHomeView: ReqHandler = async (_, reply) => {
-  const usernames = ["GitHub", null, "microsoft"];
-  const [github, wnemencha, microsoft] = await Promise.all(
+  const usernames = ["GitHub", null, "microsoft", null];
+  const [github, ethicdevs, microsoft, facebook] = await Promise.all(
     usernames.map((u) => u != null && getGitHubUser(u))
   );
 
-  return reply.streamReactView("HomeView", {
+  return reply.streamReactView(HomeView.name, {
     foo: "🔥",
     users: {
+      ethicdevs,
       github,
-      wnemencha,
       microsoft,
+      facebook,
     },
   });
 };

@@ -6,12 +6,16 @@ export type InternalErrorViewProps = {
   error: FastifyError;
 };
 
+const DEBUG = !!(
+  process.env.DEBUG != null && ["true", "1", true].includes(process.env.DEBUG)
+);
+
 const InternalErrorView: ReactView<InternalErrorViewProps> = ({ error }) => {
   return (
     <div>
-      <h1>😵‍💫 Woops... we've encountered an internal error.</h1>
+      <h1>⚡️😵‍💫 Woops... we've encountered an internal error.</h1>
       <p>Sorry but we cannot recover from this error...</p>
-      {process.env.NODE_ENV === "development" && (
+      {(DEBUG || process.env.NODE_ENV === "development") && (
         <details>
           <summary>Find out more about this error (expert mode):</summary>
           <p>

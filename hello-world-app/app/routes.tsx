@@ -1,9 +1,13 @@
+// 1st-party
 import { AppRouter, Router } from "@ethicdevs/react-monolith";
 import { AppRouterGroup } from "@ethicdevs/react-monolith/dist/types";
+// 3rd-party
 import React from "react";
-
+// app
+/* controllers */
 import * as HomeController from "./controllers/HomeController";
 import * as ThemeController from "./controllers/ThemeController";
+/* views */
 import HomeView from "./views/HomeView";
 
 const HelloWorldAppRouter: AppRouter = () => (

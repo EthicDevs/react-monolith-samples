@@ -1,16 +1,16 @@
 /* Counter */(function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define("Counter", ["exports", "react"], factory);
+    define("Counter", ["exports", "react", "styled-components"], factory);
   } else if (typeof exports !== "undefined") {
-    factory(exports, require("react"));
+    factory(exports, require("react"), require("styled-components"));
   } else {
     var mod = {
       exports: {}
     };
-    factory(mod.exports, global.React);
+    factory(mod.exports, global.React, global.styled);
     global.Counter = mod.exports;
   }
-})(typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : this, function (_exports, _react) {
+})(typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : this, function (_exports, _react, _styledComponents) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
@@ -18,6 +18,9 @@
   });
   _exports.default = void 0;
   _react = _interopRequireWildcard(_react);
+  _styledComponents = _interopRequireDefault(_styledComponents);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
   function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -31,6 +34,22 @@
   }); // app/islands/Counter.tsx
 
 
+  var Button = _styledComponents.default.button`
+  min-height: 48px;
+  min-width: 80px;
+
+  padding: 8px 20px;
+
+  border-image: none;
+  border-width: 1px;
+  border-style: solid;
+  border-color: gray;
+  border-radius: 24px;
+
+  font-size: 16px;
+  font-weight: bold;
+`; // app/islands/Counter.tsx
+
   var Counter = /* @__PURE__ */__name(({
     defaultValue = 42
   }) => {
@@ -39,18 +58,16 @@
     const decrementCounter = (0, _react.useCallback)(() => setCounter(prev => prev - 1), [setCounter]);
     return /* @__PURE__ */_react.default.createElement("div", {
       style: styles.counterContainer
-    }, /* @__PURE__ */_react.default.createElement("button", {
+    }, /* @__PURE__ */_react.default.createElement(Button, {
       onClick: decrementCounter,
       type: "button",
-      title: "Click to Decrement",
-      style: styles.counterButton
+      title: "Click to Decrement"
     }, "Decrement"), /* @__PURE__ */_react.default.createElement("div", {
       style: styles.counterText
-    }, counter), /* @__PURE__ */_react.default.createElement("button", {
+    }, counter), /* @__PURE__ */_react.default.createElement(Button, {
       onClick: incrementCounter,
       type: "button",
-      title: "Click to Increment",
-      style: styles.counterButton
+      title: "Click to Increment"
     }, "Increment"));
   }, "Counter");
 
@@ -61,17 +78,6 @@
       justifyContent: "flex-start",
       alignItems: "center",
       fontFamily: "monospace"
-    },
-    counterButton: {
-      minHeight: 48,
-      padding: "8px 12px",
-      borderImage: "none",
-      borderWidth: 1,
-      borderStyle: "solid",
-      borderColor: "gray",
-      borderRadius: 24,
-      fontSize: 16,
-      fontWeight: "bold"
     },
     counterText: {
       padding: 10,

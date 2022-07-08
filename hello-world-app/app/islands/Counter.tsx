@@ -1,6 +1,9 @@
 import React, { CSSProperties, useCallback, useState } from "react";
 import type { ReactIsland } from "@ethicdevs/react-monolith";
 
+// app
+import { Button } from "../components";
+
 interface CounterProps {
   defaultValue?: number;
 }
@@ -18,23 +21,21 @@ const Counter: ReactIsland<CounterProps> = ({ defaultValue = 42 }) => {
 
   return (
     <div style={styles.counterContainer}>
-      <button
+      <Button
         onClick={decrementCounter}
         type={"button"}
         title={"Click to Decrement"}
-        style={styles.counterButton}
       >
         Decrement
-      </button>
+      </Button>
       <div style={styles.counterText}>{counter}</div>
-      <button
+      <Button
         onClick={incrementCounter}
         type={"button"}
         title={"Click to Increment"}
-        style={styles.counterButton}
       >
         Increment
-      </button>
+      </Button>
     </div>
   );
 };
@@ -46,17 +47,6 @@ const styles: Record<string, CSSProperties> = {
     justifyContent: "flex-start",
     alignItems: "center",
     fontFamily: "monospace",
-  },
-  counterButton: {
-    minHeight: 48,
-    padding: "8px 12px",
-    borderImage: "none",
-    borderWidth: 1,
-    borderStyle: "solid",
-    borderColor: "gray",
-    borderRadius: 24,
-    fontSize: 16,
-    fontWeight: "bold",
   },
   counterText: {
     padding: 10,
