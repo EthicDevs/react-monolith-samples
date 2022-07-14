@@ -8,9 +8,9 @@ import {
 } from "@ethicdevs/react-monolith";
 
 // app
-import { version as appVersion } from "../package.json";
-import * as paths from "../paths";
 import { getEnv } from "./utils/server";
+import * as paths from "../paths";
+import { version as appVersion } from "../package.json";
 
 const HOST = process.env.HOST || "localhost";
 const PORT = process.env.PORT || 4100;
@@ -20,12 +20,14 @@ let server: null | AppServer = null;
 
 async function main() {
   server = await makeAppServer(HOST, PORT, {
-    appName: "hello-world-app",
+    appName: "Hello World App",
     appVersion,
     env: getEnv(),
+    externalDependencies: {
+      // "markdown-to-jsx": "MarkdownToJSX", // not an umd module
+    },
     featureFlags: {
       withDevServer: __DEV__ === true,
-      withResponseCompression: __DEV__ !== true,
       withStyledSSR: true,
     },
     paths: {

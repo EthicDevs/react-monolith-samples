@@ -285,9 +285,9 @@
   version "0.7.5"
   resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.7.5.tgz#77211291c1900a700b8a78cfafda3160d76949ed"
 
-"@ethicdevs/fastify-stream-react-views@^0.9.2":
-  version "0.9.2"
-  resolved "https://registry.yarnpkg.com/@ethicdevs/fastify-stream-react-views/-/fastify-stream-react-views-0.9.2.tgz#7d00e1cfc207f8d258e06401c5757160603d6f79"
+"@ethicdevs/fastify-stream-react-views@^0.9.7":
+  version "0.9.7"
+  resolved "https://registry.yarnpkg.com/@ethicdevs/fastify-stream-react-views/-/fastify-stream-react-views-0.9.7.tgz#057d15744e6c7ddfd6e3df5f1d287fdca42a87e7"
   dependencies:
     "@babel/plugin-transform-modules-umd" "^7.18.0"
     babel-plugin-styled-components "^2.0.7"
@@ -299,9 +299,9 @@
     terser "^5.14.1"
     transform-modules-eumd "^1.0.0"
 
-"@ethicdevs/react-monolith@^0.2.5":
-  version "0.2.5"
-  resolved "https://registry.yarnpkg.com/@ethicdevs/react-monolith/-/react-monolith-0.2.5.tgz#70130ececa50020254089b585e5b28eadf04470a"
+"@ethicdevs/react-monolith@^0.3.3":
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/@ethicdevs/react-monolith/-/react-monolith-0.3.3.tgz#b69da4d42adeb2a8da82b5dfe6d05ba035b3f9d0"
   dependencies:
     deepest-merge "^1.0.0"
     react-ssr-prepass "^1.5.0"

@@ -22,6 +22,7 @@ export const getHomeView: ReqHandler = async (_, reply) => {
   );
 
   return reply.streamReactView(HomeView.name, {
+    title: "React Monolith",
     foo: "🔥",
     users: {
       ethicdevs,

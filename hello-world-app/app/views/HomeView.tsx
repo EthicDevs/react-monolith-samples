@@ -15,7 +15,23 @@ interface HomeViewProps {
 const HomeView: ReactView<HomeViewProps> = ({ foo, users }) => {
   return (
     <div>
-      <h1>React Monolith</h1>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          flexWrap: "nowrap",
+          alignItems: "center",
+        }}
+      >
+        <img
+          src={"/public/assets/images/react_monolith_logo@64w.png"}
+          style={{
+            height: 64,
+            width: 64,
+          }}
+        />
+        <h1 style={{ marginLeft: 24 }}>React Monolith</h1>
+      </div>
       <h2>It works {foo}!</h2>
       <p>
         React SSR + CSI using the Islands pattern for the ultimate A11Y/SEO
